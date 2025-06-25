@@ -40,6 +40,7 @@ import { GroqProvider } from "./providers/GroqProvider"
 import { BasetenProvider } from "./providers/BasetenProvider"
 import { Mode } from "@shared/storage/types"
 import { HuaweiCloudMaasProvider } from "./providers/HuaweiCloudMaasProvider"
+import { GeminiCliProvider } from "./providers/GeminiCliProvider"
 
 interface ApiOptionsProps {
 	showModelOptions: boolean
@@ -146,6 +147,7 @@ const ApiOptions = ({ showModelOptions, apiErrorMessage, modelIdErrorMessage, is
 					<VSCodeOption value="vertex">GCP Vertex AI</VSCodeOption>
 					<VSCodeOption value="gemini">Google Gemini</VSCodeOption>
 					<VSCodeOption value="groq">Groq</VSCodeOption>
+					<VSCodeOption value="gemini-cli">Gemini CLI Provider</VSCodeOption>
 					<VSCodeOption value="deepseek">DeepSeek</VSCodeOption>
 					<VSCodeOption value="openai-native">OpenAI</VSCodeOption>
 					<VSCodeOption value="cerebras">Cerebras</VSCodeOption>
@@ -237,8 +239,15 @@ const ApiOptions = ({ showModelOptions, apiErrorMessage, modelIdErrorMessage, is
 
 			{apiConfiguration && selectedProvider === "requesty" && (
 				<RequestyProvider showModelOptions={showModelOptions} isPopup={isPopup} currentMode={currentMode} />
+			)}	
+			{apiConfiguration && selectedProvider === "gemini-cli" && (
+				<GeminiCliProvider
+					apiConfiguration={apiConfiguration}
+					handleInputChange={handleInputChange}
+					showModelOptions={showModelOptions}
+					isPopup={isPopup}
+				/>
 			)}
-
 			{apiConfiguration && selectedProvider === "fireworks" && (
 				<FireworksProvider showModelOptions={showModelOptions} isPopup={isPopup} currentMode={currentMode} />
 			)}

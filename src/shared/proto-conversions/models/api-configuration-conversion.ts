@@ -202,6 +202,8 @@ function convertApiProviderToProto(provider: string | undefined): ProtoApiProvid
 			return ProtoApiProvider.LMSTUDIO
 		case "gemini":
 			return ProtoApiProvider.GEMINI
+		case "gemini-cli":
+			return ProtoApiProvider.GEMINI_CLI
 		case "openai-native":
 			return ProtoApiProvider.OPENAI_NATIVE
 		case "requesty":
@@ -272,6 +274,8 @@ function convertProtoToApiProvider(provider: ProtoApiProvider): ApiProvider {
 			return "lmstudio"
 		case ProtoApiProvider.GEMINI:
 			return "gemini"
+		case ProtoApiProvider.GEMINI_CLI:
+			return "gemini-cli"
 		case ProtoApiProvider.OPENAI_NATIVE:
 			return "openai-native"
 		case ProtoApiProvider.REQUESTY:
@@ -452,6 +456,8 @@ export function convertApiConfigurationToProto(config: ApiConfiguration): ProtoA
 
 		// Favorited model IDs
 		favoritedModelIds: config.favoritedModelIds || [],
+		geminiCliOauthPath: config.geminiCliOAuthPath,
+		geminiCliProjectId: config.geminiCliProjectId,
 	}
 }
 
@@ -589,5 +595,8 @@ export function convertProtoToApiConfiguration(protoConfig: ProtoApiConfiguratio
 		// Favorited model IDs
 		favoritedModelIds:
 			protoConfig.favoritedModelIds && protoConfig.favoritedModelIds.length > 0 ? protoConfig.favoritedModelIds : undefined,
+
+		geminiCliOAuthPath: protoConfig.geminiCliOauthPath,
+		geminiCliProjectId: protoConfig.geminiCliProjectId,
 	}
 }
