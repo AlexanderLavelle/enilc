@@ -301,25 +301,25 @@ The implementation agent should use these commands to read specific sections of 
 
 
 # Read Overview section
-sed -n '/\[Overview\]/,/\[Types\]/p' implementation_plan.md | head -n -1 | cat
+sed -n '/\[Overview\]/,/\[Types\]/p' implementation_plan.md | head -n 1 | cat
 
 # Read Types section  
-sed -n '/\[Types\]/,/\[Files\]/p' implementation_plan.md | head -n -1 | cat
+sed -n '/\[Types\]/,/\[Files\]/p' implementation_plan.md | head -n 1 | cat
 
 # Read Files section
-sed -n '/\[Files\]/,/\[Functions\]/p' implementation_plan.md | head -n -1 | cat
+sed -n '/\[Files\]/,/\[Functions\]/p' implementation_plan.md | head -n 1 | cat
 
 # Read Functions section
-sed -n '/\[Functions\]/,/\[Classes\]/p' implementation_plan.md | head -n -1 | cat
+sed -n '/\[Functions\]/,/\[Classes\]/p' implementation_plan.md | head -n 1 | cat
 
 # Read Classes section
-sed -n '/\[Classes\]/,/\[Dependencies\]/p' implementation_plan.md | head -n -1 | cat
+sed -n '/\[Classes\]/,/\[Dependencies\]/p' implementation_plan.md | head -n 1 | cat
 
 # Read Dependencies section
-sed -n '/\[Dependencies\]/,/\[Testing\]/p' implementation_plan.md | head -n -1 | cat
+sed -n '/\[Dependencies\]/,/\[Testing\]/p' implementation_plan.md | head -n 1 | cat
 
 # Read Testing section
-sed -n '/\[Testing\]/,/\[Implementation Order\]/p' implementation_plan.md | head -n -1 | cat
+sed -n '/\[Testing\]/,/\[Implementation Order\]/p' implementation_plan.md | head -n 1 | cat
 
 # Read Implementation Order section
 sed -n '/\[Implementation Order\]/,$p' implementation_plan.md | cat
