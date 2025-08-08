@@ -2,8 +2,6 @@
 
 ## 3.21.1
 
-### Patch Changes
-
 - 4ab8559: Support sending context to active webview when editor panels are opened.
 - d3c8fbb: remove unused parseAssistantmessageV1
 - 1b06633: Fix LiteLLM Proxy Provider Cost Tracking
